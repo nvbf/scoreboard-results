@@ -1,24 +1,6 @@
-/** @jsx React.DOM  */
-'use strict';
+//var React = require('react'),
+//  hei = require('./hei');
 
-var React = require('react'),
-  rb = require('react-bootstrap'),
-  App;
-
-App = React.createClass({
-  displayName: function() {
-    return 'App';
-  },
-
-  render: function() {
-    return (
-        <h1> Results </h1>
-    )
-  }
-});
-
-window.React = React;
-
-React.render( <App />, document.body
-)
-;
+document.write("<br/>######!<br/><br/>");
+//document.write(React.renderComponentToString(hei));
+document.write("############REACT STOP");
