@@ -11,7 +11,7 @@ hei = React.createClass({
 
   render: function() {
     return (
-        <p>Hei!!!!</p>
+        <p>Hei på deg....!</p>
     )
   }
 });
