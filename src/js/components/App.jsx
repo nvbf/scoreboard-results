@@ -1,4 +1,4 @@
 var React = require('react');
-var Hei = require('./Hei');
+var ResultBoard = require('./ResultBoard');
 
-React.render(<Hei />, document.getElementById('recact-app'));
+React.render(<ResultBoard />, document.getElementById('recact-app'));
