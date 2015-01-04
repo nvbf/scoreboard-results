@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('build', ['test', 'move-static']);
+gulp.task('build', ['test', 'webpack']);

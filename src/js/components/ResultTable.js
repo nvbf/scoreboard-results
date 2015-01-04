@@ -3,14 +3,26 @@
 
 var React = require('react'),
   Table = require('react-bootstrap/Table'),
-  ResultBoard;
+  ResultRow = require('./ResultRow'),
+  ResultTable;
 
-ResultBoard = React.createClass({
+ResultTable = React.createClass({
   displayName: function() {
-    return 'ResultBoard';
+    return 'ResultTable';
   },
 
+
   render: function() {
+    var rows = [];
+
+    var toRow = function(match) {
+      rows.push(<ResultRow match={match} key={match.id} />);
+    };
+
+    console.log(this.props);
+    console.log(this.props.matches);
+    console.log(this.props.matches.matches);
+    this.props.matches.matches.forEach(toRow);
     return (
       <Table striped bordered condensed hover>
         <thead>
@@ -21,15 +33,11 @@ ResultBoard = React.createClass({
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Sindre - Kristian </td>
-            <td>Magnus - Edvard </td>
-            <td>21-19, 21-23, 12-14</td>
-          </tr>
+        {rows}
         </tbody>
       </Table>
     )
   }
 });
 
-module.exports = ResultBoard;
+module.exports = ResultTable;

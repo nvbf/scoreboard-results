@@ -1,7 +1,9 @@
+var hot = !(process.env.ENV === 'production');
+
 module.exports = {
-  hot: true,
+  hot: hot,
   entry: {
-    app: ['webpack/hot/dev-server', './src/js/components/App.jsx']
+    app: ['webpack/hot/dev-server', './src/js/components/App.js']
   },
   output: {
     path: __dirname + '/public',
@@ -9,8 +11,9 @@ module.exports = {
   },
   module: {
     loaders: [
-      // Pass *.jsx files through jsx-loader transform
-      { test: /\.jsx$/, loader: 'jsx' }
+      { test: /\.js$/, loader: 'jsx' },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      {test: /\.(eot|woff|svg|ttf)$/, loader: 'file'}
     ]
   },
   resolve: {
