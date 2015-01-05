@@ -1,6 +1,5 @@
-var React = require('react');
-var ResultBoard = require('./ResultBoard');
-
+var React = require('react'),
+    ResultBoard = require('./ResultBoard');
 
 React.render(<ResultBoard />, document.body);
 

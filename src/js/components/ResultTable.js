@@ -11,17 +11,14 @@ ResultTable = React.createClass({
     return 'ResultTable';
   },
 
-
   render: function() {
-    var rows = [];
+    var rows = [],
+      toRow;
 
-    var toRow = function(match) {
+    toRow = function(match) {
       rows.push(<ResultRow match={match} key={match.id} />);
     };
 
-    console.log(this.props);
-    console.log(this.props.matches);
-    console.log(this.props.matches.matches);
     this.props.matches.matches.forEach(toRow);
     return (
       <Table striped bordered condensed hover>

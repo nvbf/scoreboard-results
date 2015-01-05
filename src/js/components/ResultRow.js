@@ -10,9 +10,9 @@ ResultRow = React.createClass({
   },
 
   render: function() {
-    var hometeam = this.props.match.hometeam;
-    var awayteam = this.props.match.awayteam;
-    var sets = this.props.match.sets;
+    var hometeam = this.props.match.hometeam,
+      awayteam = this.props.match.awayteam,
+      sets = this.props.match.sets;
     return (
       <tr>
         <td>{hometeam.player1} - {hometeam.player2}</td>

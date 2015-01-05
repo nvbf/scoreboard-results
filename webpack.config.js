@@ -1,7 +1,4 @@
-var hot = !(process.env.ENV === 'production');
-
-module.exports = {
-  hot: hot,
+var config = {
   entry: {
     app: ['webpack/hot/dev-server', './src/js/components/App.js']
   },
@@ -11,8 +8,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx' },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      {test: /\.js$/, loader: 'jsx'},
+      {test: /\.css$/, loader: "style-loader!css-loader"},
       {test: /\.(eot|woff|svg|ttf)$/, loader: 'file'}
     ]
   },
@@ -21,3 +18,11 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   }
 };
+
+var hot = !(process.env.ENV === 'production');
+
+if (hot) {
+  config.hot = hot;
+}
+
+module.exports = config;
